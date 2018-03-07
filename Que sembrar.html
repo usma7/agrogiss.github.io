@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="EstilosCSS.css">
+		<link rel="stylesheet" href="fonts.css">
+		<link rel="shortcut icon" type="image/x-icon" href="Imagenes/logocopia.ico"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			body { background-image: url("http://agro-100.ca/wp-content/uploads/2015/10/mais.jpg");
+			background-repeat: no-repeat;  
+			background-size: cover;
+			background-attachment: fixed;
+			}
+		</style>
+	</head>
+		<body>
+			<header>
+				<nav class = "navegacion">
+					<ul class = "menu">
+						<li><a href="file:///C:/Users/Juan%20Jose/Desktop/AgroGis/AgroGis.html">Inicio</a></li>
+						<li><a href="file:///C:/Users/Juan%20Jose/Desktop/AgroGis/Nosotros.html">Nosotros</a></li>
+						<li><a href="#">Servicios</a>
+							<ul class="submenu">
+								<li><a href="">Que sembrar?</a></li>
+							</ul> 
+						</li>
+						<li><a href="file:///C:/Users/Juan%20Jose/Desktop/AgroGis/Contactos.html">Contactos</a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><b href="#">AgroGis</b></li>
+					</ul>
+				</nav>
+			</header>
+			<div class = "social">
+				<ul>
+					<li><a href="https://www." target="_blank"class = "icon-facebook2"></a></li>
+					<li><a href="http://www." target="_blank"class = "icon-twitter"></a></li>
+					<li><a href="http://www." target="_blank"class = "icon-instagram"></a></li>
+					<li><a href="https://www." target="_blank"class = "icon-youtube"></a></li>
+					<li><a href="mailto:@gmail.com" target="_blank"class = "icon-mail"></a></li>
+				</ul> 
+			</div>
+			<div id="margen">
+				<style type="text/css">
+				.seleccion{
+				border: 3px solid #000000;
+				background-color: #000000;
+				color:white;
+				font-size:17px;
+				width:200px;
+				height:35px;
+
+				}
+				</style>
+
+				<h1 style="font-family:Lucida grande;"><center>¿Que sembrar?</center></h1></br>
+
+				<h2><center>En este apartado, te indicaremos que productos son mejores para que plantes tus mejores semillas</center></h2></br></br></br>
+				<h2><center>Selecciona tu país y tu región</center></h2>
+				</br>
+
+				<body>
+				<form name="formulario1" action="#"><center>
+				<select class="seleccion" name="cosa" onchange="cambia()">
+				<option value="0">Seleccione su pais
+				<option value="1">Colombia
+				<option value="2">Argentina
+				<option value="3">Bolivia
+				<option value="4">Ecuador
+			</select>
+			
+			<select class="seleccion" name="opt">
+				<option value="-">-
+			</select>
+			
+		</form></center>
+		
+		<script type="text/javascript">
+			//1) Definimos Las Variables Correspondintes
+			var opt_1 = new Array ("-", "Antioquia", "Cundinamarca", "Pasto", "...");
+			var opt_2 = new Array ("-", "Cordoba", "Mendoza", "Tucumán", "...");
+			var opt_3 = new Array ("-", "Pando", "Beni", "La Paz", "...");
+			var opt_4 = new Array ("-", "Cauca", "Quito", "Guayaquil", "...");
+			// 2) se crea una funcion que permita ejecutar el cambio dinamico
+			
+			function cambia(){
+				var cosa;
+				//Se toma el vamor de la "cosa seleccionada"
+				cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+				//se chequea si la "cosa" esta definida
+				if(cosa!=0){
+					//selecionamos las cosas Correctas
+					mis_opts=eval("opt_" + cosa);
+					//se calcula el numero de cosas
+					num_opts=mis_opts.length;
+					//marco el numero de opt en el select
+					document.formulario1.opt.length = num_opts;
+					//para cada opt del array, la pongo en el select
+					for(i=0; i<num_opts; i++){
+						document.formulario1.opt.options[i].value=mis_opts[i];
+						document.formulario1.opt.options[i].text=mis_opts[i];
+					}
+					}else{
+						//si no habia ninguna opt seleccionada, elimino las cosas del select
+						document.formulario1.opt.length = 1;
+						//ponemos un guion en la unica opt que he dejado
+						document.formulario1.opt.options[0].value="-";
+						document.formulario1.opt.options[0].text="-";
+					}
+					//hacer un reset de las opts
+					document.formulario1.opt.options[0].selected = true;
+					
+				}
+			</script>
+			</body>
+			<body>
+			</br>
+			</br>
+			<h2 style="font-family:Lucida grande;">
+				<center>
+					Tipo de cultivo a sembrar
+				</center>
+			</h2>
+			</br>
+
+			<style type="text/css">
+				.tipo {
+					border: 3px solid #000000;
+					background-color: #000000;
+					color: white;
+					font-size: 17px;
+					width: 200px;
+					height: 35px;
+				}
+			</style>
+
+			<center>
+				<select class="tipo">
+					<option value="cereales">Cereales</option>
+					<option value="leguminosa">Leguminosa</option>
+					<option value="oleaginosas">Oleaginosas</option>
+					<option value="hortalizas">Hortalizas</option>
+					<option value="frutales">Frutales</option>
+			</center>
+			</select>
+
+
+
+		</body>
+			</div>
+
+
+			<div id="margen1">
+			<center><font size = "20"><a href="#">AgroGis</a></font></center>
+			<center><font size = "2"><a href="#">En los siguientes enlaces puede ver nuestra Política de Privacidad de Datos, al igual que los Términos y Condiciones de Uso de Contenidos.</a></font></center>
+			<center><font size = "2"><a href="#">AgroGis es una plataforma que visibiliza, conecta, e informa a los usuarios sobre este gran proyecto del agro.</a></font></center>
+			<center><font size = "2"><a href="#">Copyright @AgroGis.com</a></font></center>
+			</div>
+		</body>
+</html>
